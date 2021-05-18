@@ -12,12 +12,16 @@ import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 public class Model implements Disposable {
+    View view;
+    Controller controller;
     OrthographicCamera camera;
     SpriteBatch batch;
     Stage menu, ranking, settings, game;
-    private World world;
+    World world;
     Screen screen = Screen.menu;
-    float width, height;
+    Hero hero;
+    float width, height, speed = 0, row, scale, hero_height = 1.5f, speed_default = 0;
+    int score;
 
     void act(){
         switch (screen){
@@ -31,11 +35,35 @@ public class Model implements Disposable {
                 ranking.act();
                 break;
             case game:
+                world.step(1/60f, 6, 2);
                 game.act();
                 break;
             default:
                 break;
         }
+    }
+
+    void setFloors(){
+        Floor ground = new Floor(this);
+        game.addActor(ground);
+        for(int j = 3; j <= height; j += 3)
+            game.addActor(new Floor(this, j, j % 2 == 0));
+    }
+
+    void startGame(){
+        speed_default = score = 0;
+
+        world = new World(new Vector2(0,-5),true);
+        game.clear();
+        view.createReturnButtonGame();
+        controller.addListenerGame();
+        setFloors();
+        hero = new Hero(this);
+        game.addActor(hero);
+        game.addListener(controller.hero_listener);
+
+        game.addActor(new Wall(this, true));
+        game.addActor(new Wall(this, false));
     }
 
     void setMenu(){
@@ -48,6 +76,7 @@ public class Model implements Disposable {
         screen = Screen.ranking;
     }
     void setGame(){
+        startGame();
         screen = Screen.game;
     }
 
@@ -65,10 +94,10 @@ public class Model implements Disposable {
         settings = new Stage(viewport, batch);
         game = new Stage(viewport, batch);
 
-        world = new World(new Vector2(0,-10),true);
-        width = Gdx.graphics.getWidth();
-        height = Gdx.graphics.getHeight();
 
+        scale = width = Gdx.graphics.getWidth();
+        height = Gdx.graphics.getHeight();
+        row = height / 25;
         setMenu();
     }
     @Override
@@ -82,6 +111,3 @@ public class Model implements Disposable {
     }
 }
 
-enum Screen{
-    menu, ranking, settings, game;
-}

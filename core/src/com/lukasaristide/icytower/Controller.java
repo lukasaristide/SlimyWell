@@ -2,6 +2,7 @@ package com.lukasaristide.icytower;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 
@@ -72,10 +73,42 @@ public class Controller {
                         long time_now = clock.instant().getEpochSecond();
                         if(time_now - lastClicked < 2) {
                             Gdx.app.exit();
-                            System.exit(0);
+                            //System.exit(0);
                         }
                         else
                             lastClicked = time_now;
+                    }
+                    return true;
+                }
+            },
+            hero_listener = new InputListener(){
+                @Override
+                public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                    Vector2 pos = model.hero.body.getPosition();
+                    Vector2 vel = model.hero.body.getLinearVelocity();
+                    if(vel.y <= -model.speed/2)
+                        model.hero.body.applyLinearImpulse(0, 0.013f + Math.abs(vel.x/1000), pos.x, pos.y, true);
+                    model.speed_default = 0.04f;
+                    return true;
+                }
+                @Override
+                public boolean keyDown (InputEvent event, int keycode){
+                    Vector2 pos = model.hero.body.getPosition();
+                    switch (keycode){
+                        case Input.Keys.UP:
+                            Vector2 vel = model.hero.body.getLinearVelocity();
+                            if(vel.y <= -model.speed/2)
+                                model.hero.body.applyLinearImpulse(0, 0.013f + Math.abs(vel.x/1000), pos.x, pos.y, true);
+                            model.speed_default = 0.04f;
+                            break;
+                        case Input.Keys.RIGHT:
+                            model.hero.body.applyLinearImpulse(0.002f, 0, pos.x, pos.y, true);
+                            break;
+                        case Input.Keys.LEFT:
+                            model.hero.body.applyLinearImpulse(-0.002f, 0, pos.x, pos.y, true);
+                            break;
+                        default:
+                            break;
                     }
                     return true;
                 }
@@ -97,11 +130,16 @@ public class Controller {
         }
     }
 
+    void addListenerGame(){
+        model.game.addListener(back_key);
+    }
+
     Controller(Model m){
         model = m;
+        m.controller = this;
         Gdx.input.setCatchKey(Input.Keys.BACK, true);
         model.menu.addListener(back_key_menu);
-        model.game.addListener(back_key);
+        addListenerGame();
         model.ranking.addListener(back_key);
         model.settings.addListener(back_key);
     }

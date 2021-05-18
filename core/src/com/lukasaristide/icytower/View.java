@@ -18,16 +18,18 @@ import com.badlogic.gdx.utils.ScreenUtils;
 class View implements Disposable {
     private Model model;
     private Controller controller;
-    private SpriteBatch batch;
+    SpriteBatch batch;
     private BitmapFont font128, font64, font32;
     private Texture bg;
-    private Skin buttonSkin;
+    Texture hero;
+    Skin buttonSkin;
     TextButton game_b, ranking_b, settings_b;
     Button back_menu_game, back_menu_ranking, back_menu_settings;
     String title = "Slimy Well";
 
     private void loadTextures(){
         bg = new Texture("background2.png");
+        hero = new Texture("hero.png");
         buttonSkin = new Skin(
                 Gdx.files.internal("button_skin.json"),
                 new TextureAtlas(Gdx.files.internal("button_skin.atlas"))
@@ -90,15 +92,15 @@ class View implements Disposable {
         model.menu.addActor(settings_b);
     }
 
-    private void createGame(){
+    void createReturnButtonGame(){
         model.game.addActor(back_menu_game);
     }
 
-    private void createRanking(){
+    private void createReturnButtonRanking(){
         model.ranking.addActor(back_menu_ranking);
     }
 
-    private void createSettings(){
+    private void createReturnButtonSettings(){
         model.settings.addActor(back_menu_settings);
     }
 
@@ -111,7 +113,6 @@ class View implements Disposable {
         font64 = gen.generateFont(parameter);
         parameter.size = 32;
         font32 = gen.generateFont(parameter);
-
     }
 
     private void drawMenu(){
@@ -119,6 +120,13 @@ class View implements Disposable {
         font128.draw(batch,title,0f, model.height * 0.75f, model.width, Align.center,true);
         batch.end();
         model.menu.draw();
+    }
+
+    private void drawScore(){
+        batch.begin();
+        font64.setColor(Color.RED);
+        font64.draw(batch,String.valueOf(model.score),model.width / 10, model.height * 0.95f, model.width, Align.left, true);
+        batch.end();
     }
 
     void draw(){
@@ -133,6 +141,7 @@ class View implements Disposable {
                 break;
             case game:
                 model.game.draw();
+                drawScore();
                 break;
             case ranking:
                 model.ranking.draw();
@@ -146,6 +155,7 @@ class View implements Disposable {
     View(Model m, Controller c){
         model = m;
         controller = c;
+        m.view = this;
 
         batch = m.batch;
 
@@ -153,9 +163,9 @@ class View implements Disposable {
         loadTextures();
         setUpButtons();
         createMenu();
-        createGame();
-        createRanking();
-        createSettings();
+        createReturnButtonGame();
+        createReturnButtonRanking();
+        createReturnButtonSettings();
     }
 
     @Override
