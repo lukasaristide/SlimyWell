@@ -38,7 +38,6 @@ public class AndroidLauncher extends AndroidApplication {
 	protected void onDestroy() {
 		super.onDestroy();
 		db.close();
-
 		editor.putFloat("mod_tilt", savedSettings.mod_tilt).putFloat("mod_speed", savedSettings.mod_speed).putFloat("mod_jump", savedSettings.mod_jump);
 		editor.apply();
 	}

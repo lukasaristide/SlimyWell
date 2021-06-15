@@ -131,7 +131,7 @@ class View implements Disposable {
     private void createSettings(){
         createReturnButtonSettings();
         jump = new Slider(0.8f, 1.2f, 0.01f, false, buttonSkin);
-        speed = new Slider(0.5f, 3f, 0.01f, false, buttonSkin);
+        speed = new Slider(0.5f, 5f, 0.01f, false, buttonSkin);
         tilt = new Slider(0.5f, 1.5f, 0.01f, false, buttonSkin);
 
         float sl_w = model.width*0.7f, sl_h = model.height * 0.2f;
@@ -144,9 +144,9 @@ class View implements Disposable {
         speed.setSize(sl_w, sl_h);
         tilt.setSize(sl_w, sl_h);
 
-        jump.setPosition(model.width * 0.15f, model.height * 0.05f);
-        speed.setPosition(model.width * 0.15f, model.height * 0.3f);
-        tilt.setPosition(model.width * 0.15f, model.height * 0.55f);
+        jump.setPosition(model.width * 0.15f, model.height * 0.09f);
+        speed.setPosition(model.width * 0.15f, model.height * 0.34f);
+        tilt.setPosition(model.width * 0.15f, model.height * 0.59f);
 
         model.settings.addActor(jump);
         model.settings.addActor(speed);
@@ -161,9 +161,9 @@ class View implements Disposable {
         speedLabel.setAlignment(Align.center);
         tiltLabel.setAlignment(Align.center);
 
-        jumpLabel.setPosition(model.width * 0.15f, model.height * 0.15f);
-        speedLabel.setPosition(model.width * 0.15f, model.height * 0.4f);
-        tiltLabel.setPosition(model.width * 0.15f, model.height * 0.65f);
+        jumpLabel.setPosition(model.width * 0.15f, model.height * 0.19f);
+        speedLabel.setPosition(model.width * 0.15f, model.height * 0.44f);
+        tiltLabel.setPosition(model.width * 0.15f, model.height * 0.69f);
 
         jumpLabel.setSize(sl_w,sl_h);
         speedLabel.setSize(sl_w,sl_h);

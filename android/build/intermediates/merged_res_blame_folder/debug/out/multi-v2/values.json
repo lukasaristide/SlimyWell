@@ -9,20 +9,25 @@
                         "startLines": "3",
                         "startColumns": "4",
                         "startOffsets": "56",
-                        "endColumns": "46",
-                        "endOffsets": "98"
+                        "endColumns": "47",
+                        "endOffsets": "99"
                     },
                     "to": {
                         "startLines": "3",
                         "startColumns": "4",
                         "startOffsets": "111",
-                        "endColumns": "46",
-                        "endOffsets": "153"
+                        "endColumns": "47",
+                        "endOffsets": "154"
                     }
                 },
                 {
                     "source": "/home/aristide/Pulpit/workspace/IcyTower/android/res/values/color.xml",
                     "from": {
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
+                    },
+                    "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
@@ -33,20 +38,17 @@
                 {
                     "source": "/home/aristide/Pulpit/workspace/IcyTower/android/res/values/styles.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "17",
-                        "endLines": "9",
-                        "endColumns": "12",
-                        "endOffsets": "475"
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
                     },
                     "to": {
                         "startLines": "4",
                         "startColumns": "4",
-                        "startOffsets": "158",
+                        "startOffsets": "159",
                         "endLines": "11",
                         "endColumns": "12",
-                        "endOffsets": "616"
+                        "endOffsets": "617"
                     }
                 }
             ]

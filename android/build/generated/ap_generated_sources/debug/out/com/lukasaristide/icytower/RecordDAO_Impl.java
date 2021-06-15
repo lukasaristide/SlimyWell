@@ -48,11 +48,11 @@ public final class RecordDAO_Impl implements RecordDAO {
   }
 
   @Override
-  public void insertAll(final Record... arg0) {
+  public void insertAll(final Record... records) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __insertionAdapterOfRecord.insert(arg0);
+      __insertionAdapterOfRecord.insert(records);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
