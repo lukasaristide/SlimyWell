@@ -47,6 +47,15 @@
 28-->/home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:19:27-74
 29            </intent-filter>
 30        </activity>
-31    </application>
-32
-33</manifest>
+31
+32        <service
+32-->[androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:25:9-28:40
+33            android:name="androidx.room.MultiInstanceInvalidationService"
+33-->[androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:26:13-74
+34            android:directBootAware="true"
+34-->[androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:27:13-43
+35            android:exported="false" />
+35-->[androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:28:13-37
+36    </application>
+37
+38</manifest>

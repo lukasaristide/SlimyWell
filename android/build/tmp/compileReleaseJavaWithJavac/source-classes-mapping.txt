@@ -1,0 +1,4 @@
+com/lukasaristide/icytower/BuildConfig.java
+ com.lukasaristide.icytower.BuildConfig
+com/lukasaristide/icytower/AndroidLauncher.java
+ com.lukasaristide.icytower.AndroidLauncher

@@ -11,7 +11,13 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
+import java.util.Collections;
+import java.util.List;
+
 public class Model implements Disposable {
+    SavedSettings savedSettings;
+    Database database;
+    List<Integer> scores;
     View view;
     Controller controller;
     OrthographicCamera camera;
@@ -20,7 +26,7 @@ public class Model implements Disposable {
     World world;
     Screen screen = Screen.menu;
     Hero hero;
-    float width, height, speed = 0, row, scale, hero_height = 1.5f, speed_default = 0;
+    float width, height, speed = 0, row, scale, hero_height = 1.5f, speed_default = 0, mod_jump = 1, mod_tilt = 1, mod_speed = 1;
     int score;
 
     void act(){
@@ -66,13 +72,35 @@ public class Model implements Disposable {
         game.addActor(new Wall(this, false));
     }
 
+    void saveScore(){
+        if(score == 0)
+            return;
+        if(scores == null)
+            scores = database.get();
+        scores.add(score);
+        Collections.sort(scores, Collections.reverseOrder());
+        while(scores.size() > 8)
+            scores.remove(scores.size()-1);
+        database.clear();
+        database.insert(scores);
+    }
+
     void setMenu(){
+        if(screen == Screen.game)
+            saveScore();
+        else if(screen == Screen.settings){
+            savedSettings.mod_jump = mod_jump = view.jump.getValue();
+            savedSettings.mod_speed = mod_speed = view.speed.getValue();
+            savedSettings.mod_tilt = mod_tilt = view.tilt.getValue();
+        }
         screen = Screen.menu;
     }
     void setSettings(){
         screen = Screen.settings;
     }
     void setRanking(){
+        scores = database.get();
+        view.createRanking();
         screen = Screen.ranking;
     }
     void setGame(){
@@ -80,7 +108,13 @@ public class Model implements Disposable {
         screen = Screen.game;
     }
 
-    Model(){
+    Model(Database d, SavedSettings s){
+        database = d;
+        savedSettings = s;
+        mod_tilt = s.mod_tilt;
+        mod_speed = s.mod_speed;
+        mod_jump = s.mod_jump;
+
         camera = new OrthographicCamera();
         camera.setToOrtho(false,width,height);
         camera.update();

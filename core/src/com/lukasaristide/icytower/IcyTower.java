@@ -15,10 +15,12 @@ public class IcyTower extends ApplicationAdapter {
 	Model model;
 	View view;
 	Controller controller;
+	Database database;
+	SavedSettings savedSettings;
 
 	@Override
 	public void create () {
-		model = new Model();
+		model = new Model(database, savedSettings);
 		controller = new Controller(model);
 		view = new View(model, controller);
 	}
@@ -36,4 +38,9 @@ public class IcyTower extends ApplicationAdapter {
 		view.dispose();
 	}
 
+	IcyTower(Database d, SavedSettings s){
+		super();
+		database = d;
+		savedSettings = s;
+	}
 }

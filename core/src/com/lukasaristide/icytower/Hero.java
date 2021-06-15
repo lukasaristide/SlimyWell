@@ -1,16 +1,14 @@
 package com.lukasaristide.icytower;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Fixture;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.Align;
 
 public class Hero extends Actor {
@@ -24,6 +22,7 @@ public class Hero extends Actor {
         Vector2 v = body.getPosition();
         model.hero_height = v.y;
         setPosition(v.x * model.scale, v.y * model.scale, Align.center);
+        body.applyLinearImpulse(-Gdx.input.getAccelerometerX() * 0.0001f * model.view.scaleX * model.mod_tilt, 0, v.x, v.y, true);
         if(v.y < 0)
             model.setMenu();
         if(v.y > (model.height * 0.7) / model.scale)

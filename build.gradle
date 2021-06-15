@@ -64,7 +64,9 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64"
         api "com.badlogicgames.ashley:ashley:$ashleyVersion"
-        
+        def room_version = "2.3.0"
+        implementation "androidx.room:room-runtime:$room_version"
+        annotationProcessor "androidx.room:room-compiler:$room_version"
     }
 }
 

@@ -1,4 +1,12 @@
+com/lukasaristide/icytower/ScoresDatabase.java
+ com.lukasaristide.icytower.ScoresDatabase
 com/lukasaristide/icytower/BuildConfig.java
  com.lukasaristide.icytower.BuildConfig
+com/lukasaristide/icytower/Record.java
+ com.lukasaristide.icytower.Record
+com/lukasaristide/icytower/RecordDAO.java
+ com.lukasaristide.icytower.RecordDAO
+com/lukasaristide/icytower/DatabaseAndroid.java
+ com.lukasaristide.icytower.DatabaseAndroid
 com/lukasaristide/icytower/AndroidLauncher.java
  com.lukasaristide.icytower.AndroidLauncher

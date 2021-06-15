@@ -1,0 +1,4 @@
+#Tue May 18 13:24:02 CEST 2021
+base.0=/home/aristide/Pulpit/workspace/IcyTower/android/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

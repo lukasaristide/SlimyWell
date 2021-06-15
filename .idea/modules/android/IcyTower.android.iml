@@ -45,6 +45,11 @@
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-freetype:1.9.14" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.ashley:ashley:1.7.3" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx:1.9.14" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.room:room-common:2.3.0" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.annotation:annotation:1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.room:room-runtime:2.3.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.sqlite:sqlite-framework:2.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.sqlite:sqlite:2.1.0@aar" level="project" />
     <orderEntry type="module" module-name="IcyTower.core" />
   </component>
 </module>

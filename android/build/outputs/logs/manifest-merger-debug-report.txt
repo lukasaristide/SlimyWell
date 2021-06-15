@@ -4,6 +4,11 @@ ADDED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:2:1-24:12
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:2:1-24:12
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:2:1-24:12
+MERGED from [androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/d507e8d46657202c17de15a04f14b739/sqlite-framework-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite:2.1.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/51031ed18bb638fa07a46f87fd134684/sqlite-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/aristide/.gradle/caches/transforms-2/files-2.1/f31b9fc576ca1347bbfc2f17a170ffb0/core-runtime-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/e93485a4357858fa658c00d9138d07e1/annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:2:1-24:12
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:2:1-24:12
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:2:1-24:12
@@ -23,6 +28,8 @@ INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.x
 		ADDED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:2:11-69
 application
 ADDED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:5:5-22:19
+MERGED from [androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:24:5-29:19
 	android:label
 		ADDED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml:10:9-41
 	android:appCategory
@@ -59,6 +66,16 @@ uses-sdk
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml
+MERGED from [androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/d507e8d46657202c17de15a04f14b739/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/d507e8d46657202c17de15a04f14b739/sqlite-framework-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/51031ed18bb638fa07a46f87fd134684/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/51031ed18bb638fa07a46f87fd134684/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/aristide/.gradle/caches/transforms-2/files-2.1/f31b9fc576ca1347bbfc2f17a170ffb0/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/aristide/.gradle/caches/transforms-2/files-2.1/f31b9fc576ca1347bbfc2f17a170ffb0/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/e93485a4357858fa658c00d9138d07e1/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/e93485a4357858fa658c00d9138d07e1/annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml
 INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml
 	android:targetSdkVersion
@@ -69,3 +86,11 @@ INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.x
 		INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml
 		ADDED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml
 		INJECTED from /home/aristide/Pulpit/workspace/IcyTower/android/AndroidManifest.xml
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:25:9-28:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:28:13-37
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:27:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.3.0] /home/aristide/.gradle/caches/transforms-2/files-2.1/9611260c6007e2479df36646e9d713a7/room-runtime-2.3.0/AndroidManifest.xml:26:13-74

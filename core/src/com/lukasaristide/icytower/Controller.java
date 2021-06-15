@@ -7,7 +7,6 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 
 import java.time.Clock;
-import java.time.LocalDateTime;
 
 public class Controller {
     Model model;
@@ -87,8 +86,8 @@ public class Controller {
                     Vector2 pos = model.hero.body.getPosition();
                     Vector2 vel = model.hero.body.getLinearVelocity();
                     if(vel.y <= -model.speed/2)
-                        model.hero.body.applyLinearImpulse(0, 0.013f + Math.abs(vel.x/1000), pos.x, pos.y, true);
-                    model.speed_default = 0.04f;
+                        model.hero.body.applyLinearImpulse(0, model.mod_jump * 0.013f*(model.view.scaleY*model.view.scaleY) + Math.abs(vel.x/10000), pos.x, pos.y, true);
+                    model.speed_default = model.mod_speed * 0.04f + model.score/10000;
                     return true;
                 }
                 @Override
@@ -98,14 +97,14 @@ public class Controller {
                         case Input.Keys.UP:
                             Vector2 vel = model.hero.body.getLinearVelocity();
                             if(vel.y <= -model.speed/2)
-                                model.hero.body.applyLinearImpulse(0, 0.013f + Math.abs(vel.x/1000), pos.x, pos.y, true);
-                            model.speed_default = 0.04f;
+                                model.hero.body.applyLinearImpulse(0, model.mod_jump * 0.013f*(model.view.scaleY/model.view.scaleX) + Math.abs(vel.x/10000), pos.x, pos.y, true);
+                            model.speed_default = model.mod_speed * 0.04f + model.score/10000;
                             break;
                         case Input.Keys.RIGHT:
-                            model.hero.body.applyLinearImpulse(0.002f, 0, pos.x, pos.y, true);
+                            model.hero.body.applyLinearImpulse(model.mod_tilt * 0.002f/model.view.scaleX, 0, pos.x, pos.y, true);
                             break;
                         case Input.Keys.LEFT:
-                            model.hero.body.applyLinearImpulse(-0.002f, 0, pos.x, pos.y, true);
+                            model.hero.body.applyLinearImpulse(model.mod_tilt * -0.002f/model.view.scaleX, 0, pos.x, pos.y, true);
                             break;
                         default:
                             break;
